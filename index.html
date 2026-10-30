@@ -1,0 +1,1310 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Teorías sobre el Origen de la Vida y de las Especies — Guía Adaptada 9° P-IV</title>
+<style>
+/* ===== VARIABLES DE COLOR ===== */
+:root {
+  --c-bg: #f8f9fa; --c-surface: #ffffff; --c-text: #1a1a2e; --c-text-muted: #555;
+  --c-primary: #2563eb; --c-primary-light: #dbeafe; --c-on-solid: #fff;
+  --c-blue: #2563eb; --c-blue-bg: #dbeafe;
+  --c-orange: #ea580c; --c-orange-bg: #fff7ed;
+  --c-green: #16a34a; --c-green-bg: #f0fdf4;
+  --c-red: #dc2626; --c-red-bg: #fef2f2;
+  --c-purple: #7c3aed; --c-purple-bg: #f5f3ff;
+  --c-yellow: #ca8a04; --c-yellow-bg: #fefce8;
+  --c-border: #e2e8f0; --c-shadow: rgba(0,0,0,.08);
+  --c-sidebar-bg: #1e293b; --c-sidebar-text: #e2e8f0; --c-sidebar-active: #3b82f6;
+  --font-main: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-read: Georgia, 'Times New Roman', serif;
+  --font-access: Verdana, Geneva, sans-serif;
+  --font-current: var(--font-main);
+  --fs-base: 18px; --lh-base: 1.8; --max-width: 760px;
+  --sidebar-w: 280px;
+}
+
+/* Tema crema */
+[data-theme="cream"]{ --c-bg:#fdf6e3; --c-surface:#fefbf0; --c-text:#3d3220; --c-text-muted:#6b5e4e; --c-border:#e8dcc8; --c-shadow:rgba(60,40,0,.1); --c-sidebar-bg:#4a3728; }
+/* Tema oscuro */
+[data-theme="dark"]{ --c-bg:#1a1a2e; --c-surface:#16213e; --c-text:#e0e0e0; --c-text-muted:#a0a0b0; --c-border:#2a2a4a; --c-shadow:rgba(0,0,0,.3); --c-sidebar-bg:#0f0f23; --c-sidebar-text:#c0c0d0; --c-blue-bg:#1e3a5f; --c-orange-bg:#3d2010; --c-green-bg:#0f2f1a; --c-red-bg:#3f1010; --c-purple-bg:#2a1a4a; --c-yellow-bg:#3a2e0a; --c-primary-light:#1e3a5f; --c-on-solid:#fff; }
+/* Alto contraste */
+[data-theme="contrast"]{ --c-bg:#000; --c-surface:#111; --c-text:#fff; --c-text-muted:#ccc; --c-border:#555; --c-shadow:none; --c-sidebar-bg:#000; --c-sidebar-text:#fff; --c-blue:#5dadff; --c-orange:#ff9a5c; --c-green:#5cff8a; --c-red:#ff5c5c; --c-purple:#c49aff; --c-yellow:#ffd95c; --c-blue-bg:#001a3d; --c-orange-bg:#3d1a00; --c-green-bg:#003d1a; --c-red-bg:#3d0000; --c-purple-bg:#1a003d; --c-yellow-bg:#3d2e00; --c-primary:#5dadff; --c-primary-light:#001a3d; --c-on-solid:#000; }
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{font-size:var(--fs-base);scroll-behavior:smooth}
+body{font-family:var(--font-current);line-height:var(--lh-base);color:var(--c-text);background:var(--c-bg);transition:background .3s,color .3s}
+
+/* ===== SKIP LINK ===== */
+.skip-link{position:absolute;top:-100%;left:10px;background:var(--c-primary);color:#fff;padding:8px 16px;border-radius:4px;z-index:9999;font-weight:700}
+.skip-link:focus{top:10px}
+
+/* ===== SIDEBAR ===== */
+.sidebar{position:fixed;top:0;left:0;width:var(--sidebar-w);height:100vh;background:var(--c-sidebar-bg);color:var(--c-sidebar-text);overflow-y:auto;z-index:100;transition:transform .3s;display:flex;flex-direction:column}
+.sidebar-header{padding:20px;border-bottom:1px solid rgba(255,255,255,.1)}
+.sidebar-header h2{font-size:.95rem;line-height:1.3;font-weight:700}
+.sidebar-header .badge{display:inline-block;background:var(--c-primary);color:#fff;font-size:.7rem;padding:2px 8px;border-radius:10px;margin-top:6px}
+.sidebar-nav{flex:1;padding:8px 0}
+.sidebar-nav a{display:flex;align-items:center;gap:10px;padding:10px 20px;color:var(--c-sidebar-text);text-decoration:none;font-size:.82rem;line-height:1.3;border-left:3px solid transparent;transition:all .2s}
+.sidebar-nav a:hover,.sidebar-nav a:focus{background:rgba(255,255,255,.08);border-left-color:var(--c-sidebar-active)}
+.sidebar-nav a.active{background:rgba(255,255,255,.12);border-left-color:var(--c-sidebar-active);font-weight:700}
+.sidebar-nav a .icon{width:22px;text-align:center;flex-shrink:0;font-size:1.1rem}
+.sidebar-nav a .check{margin-left:auto;opacity:.4;font-size:.8rem}
+.sidebar-nav a.visited .check{opacity:1;color:var(--c-green)}
+.progress-bar{padding:12px 20px;border-top:1px solid rgba(255,255,255,.1)}
+.progress-bar .track{height:6px;background:rgba(255,255,255,.15);border-radius:3px;overflow:hidden}
+.progress-bar .fill{height:100%;background:var(--c-sidebar-active);border-radius:3px;transition:width .4s}
+.progress-bar .label{font-size:.7rem;margin-top:4px;opacity:.7}
+
+/* ===== MAIN ===== */
+.main{margin-left:var(--sidebar-w);min-height:100vh}
+.section{display:none;padding:40px 24px 60px;max-width:var(--max-width);margin:0 auto}
+.section.active{display:block}
+
+/* ===== HAMBURGER ===== */
+.hamburger{display:none;position:fixed;top:12px;left:12px;z-index:200;background:var(--c-primary);color:#fff;border:none;border-radius:8px;width:44px;height:44px;font-size:1.4rem;cursor:pointer;align-items:center;justify-content:center}
+
+/* ===== SETTINGS BTN ===== */
+.settings-btn{position:fixed;top:12px;right:12px;z-index:200;background:var(--c-primary);color:#fff;border:none;border-radius:8px;width:44px;height:44px;font-size:1.2rem;cursor:pointer;display:flex;align-items:center;justify-content:center}
+
+/* ===== TYPOGRAPHY ===== */
+h1{font-size:1.8rem;font-weight:800;margin-bottom:.5rem;color:var(--c-primary)}
+h2{font-size:1.4rem;font-weight:700;margin:1.5rem 0 .8rem;color:var(--c-text);border-bottom:2px solid var(--c-primary);padding-bottom:6px}
+h3{font-size:1.15rem;font-weight:700;margin:1.2rem 0 .5rem;color:var(--c-blue)}
+p{margin-bottom:1rem}
+
+/* ===== CARDS & BOXES ===== */
+.card{background:var(--c-surface);border:1px solid var(--c-border);border-radius:12px;padding:20px;margin:1rem 0;box-shadow:0 2px 8px var(--c-shadow)}
+.orientation{background:var(--c-primary-light);border-left:4px solid var(--c-primary);border-radius:8px;padding:16px 20px;margin:1.2rem 0}
+.orientation .ori-title{font-weight:700;font-size:1rem;color:var(--c-primary);margin-bottom:6px}
+.box{border-radius:10px;padding:16px 20px;margin:1rem 0}
+.box-blue{background:var(--c-blue-bg);border-left:4px solid var(--c-blue)}
+.box-orange{background:var(--c-orange-bg);border-left:4px solid var(--c-orange)}
+.box-green{background:var(--c-green-bg);border-left:4px solid var(--c-green)}
+.box-red{background:var(--c-red-bg);border-left:4px solid var(--c-red)}
+.box-purple{background:var(--c-purple-bg);border-left:4px solid var(--c-purple)}
+.box-yellow{background:var(--c-yellow-bg);border-left:4px solid var(--c-yellow)}
+.box-label{font-weight:700;font-size:.85rem;text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px}
+.box-blue .box-label{color:var(--c-blue)}
+.box-orange .box-label{color:var(--c-orange)}
+.box-green .box-label{color:var(--c-green)}
+.box-red .box-label{color:var(--c-red)}
+.box-purple .box-label{color:var(--c-purple)}
+.box-yellow .box-label{color:var(--c-yellow)}
+
+/* ===== IDENTITY CARDS ===== */
+.id-card{background:var(--c-surface);border:2px solid var(--c-border);border-radius:12px;padding:20px;margin:1rem 0;display:flex;gap:16px;align-items:flex-start}
+.id-card .id-icon{font-size:2.5rem;flex-shrink:0}
+.id-card dt{font-weight:700;color:var(--c-primary);font-size:.85rem;text-transform:uppercase}
+.id-card dd{margin:0 0 8px;font-size:.95rem}
+
+/* ===== STEPS ===== */
+.steps{counter-reset:step}
+.step{counter-increment:step;position:relative;padding-left:48px;margin-bottom:1.2rem}
+.step::before{content:counter(step);position:absolute;left:0;top:0;width:36px;height:36px;background:var(--c-primary);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.9rem}
+
+/* ===== QUIZ ===== */
+.quiz-q{background:var(--c-surface);border:1px solid var(--c-border);border-radius:10px;padding:16px;margin:1rem 0}
+.quiz-q p{font-weight:600;margin-bottom:8px}
+.quiz-q label{display:block;padding:8px 12px;margin:4px 0;border-radius:6px;cursor:pointer;border:2px solid transparent;transition:all .2s}
+.quiz-q label:hover{background:var(--c-primary-light)}
+.quiz-q input{margin-right:8px}
+.quiz-q .feedback{display:none;padding:10px;border-radius:6px;margin-top:8px;font-size:.9rem}
+.quiz-q .feedback.correct{display:block;background:var(--c-green-bg);border:1px solid var(--c-green);color:var(--c-green)}
+.quiz-q .feedback.wrong{display:block;background:var(--c-red-bg);border:1px solid var(--c-red);color:var(--c-red)}
+
+/* ===== VF ===== */
+.vf-item{padding:12px 16px;margin:8px 0;background:var(--c-surface);border:1px solid var(--c-border);border-radius:8px}
+.vf-item button{margin:4px;padding:6px 16px;border-radius:6px;border:2px solid var(--c-border);background:var(--c-surface);cursor:pointer;font-weight:600;transition:all .2s}
+.vf-item button:hover{border-color:var(--c-primary);background:var(--c-primary-light)}
+.vf-item .vf-fb{display:none;padding:8px;margin-top:6px;border-radius:6px;font-size:.9rem}
+
+/* ===== CHECKED BOX ===== */
+.check-studied{background:var(--c-green-bg);border:2px solid var(--c-green);border-radius:10px;padding:14px 20px;margin:1.5rem 0;display:flex;align-items:center;gap:10px}
+.check-studied input{width:20px;height:20px;accent-color:var(--c-green)}
+.check-studied label{font-weight:600;color:var(--c-green);cursor:pointer}
+
+/* ===== NAV BOTTOM ===== */
+.nav-bottom{display:flex;justify-content:space-between;gap:12px;margin-top:2rem;padding-top:1rem;border-top:2px solid var(--c-border)}
+.nav-bottom button{flex:1;padding:12px;border:2px solid var(--c-primary);background:transparent;color:var(--c-primary);border-radius:8px;font-weight:600;cursor:pointer;font-size:.85rem;transition:all .2s}
+.nav-bottom button:hover{background:var(--c-primary);color:var(--c-on-solid)}
+.nav-bottom button:disabled{opacity:.3;cursor:default}
+
+/* ===== TTS BAR ===== */
+.tts-bar{position:fixed;bottom:0;left:var(--sidebar-w);right:0;background:var(--c-surface);border-top:2px solid var(--c-primary);padding:8px 16px;display:none;align-items:center;gap:10px;z-index:150;flex-wrap:wrap}
+.tts-bar.show{display:flex}
+.tts-bar button{background:var(--c-primary);color:#fff;border:none;border-radius:6px;padding:6px 12px;cursor:pointer;font-size:.85rem}
+.tts-bar select,.tts-bar input[type=range]{font-size:.8rem}
+.tts-bar .tts-info{font-size:.8rem;color:var(--c-text-muted)}
+
+/* ===== SETTINGS PANEL ===== */
+.settings-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:300;display:none;align-items:center;justify-content:center}
+.settings-overlay.show{display:flex}
+.settings-panel{background:var(--c-surface);border-radius:16px;padding:24px;width:90%;max-width:500px;max-height:85vh;overflow-y:auto;box-shadow:0 20px 60px rgba(0,0,0,.2)}
+.settings-panel h2{border:none;margin-top:0}
+.settings-group{margin:12px 0}
+.settings-group label{display:block;font-weight:600;font-size:.85rem;margin-bottom:4px;color:var(--c-text-muted)}
+.settings-group .btn-row{display:flex;flex-wrap:wrap;gap:6px}
+.settings-group .btn-row button{padding:6px 12px;border:2px solid var(--c-border);border-radius:6px;background:var(--c-surface);cursor:pointer;font-size:.8rem;transition:all .2s}
+.settings-group .btn-row button.active{border-color:var(--c-primary);background:var(--c-primary-light);font-weight:700}
+.settings-close{background:var(--c-primary);color:#fff;border:none;border-radius:8px;padding:10px 24px;cursor:pointer;font-weight:700;margin-top:12px;font-size:.9rem}
+
+/* ===== PRINT PANEL ===== */
+.print-panel{margin:1.5rem 0;background:var(--c-yellow-bg);border:2px solid var(--c-yellow);border-radius:10px;padding:16px}
+.print-panel label{display:block;margin:4px 0;font-size:.9rem}
+.print-panel button{margin-top:10px;background:var(--c-primary);color:#fff;border:none;border-radius:8px;padding:10px 20px;cursor:pointer;font-weight:700}
+
+/* ===== READING RULER ===== */
+.reading-ruler{position:fixed;left:0;right:0;height:40px;pointer-events:none;z-index:250;display:none;border-top:2px solid var(--c-primary);border-bottom:2px solid var(--c-primary);background:rgba(37,99,235,.06)}
+body.ruler-on .reading-ruler{display:block}
+
+/* ===== FOCUS MODE ===== */
+body.focus-mode .sidebar,body.focus-mode .hamburger,body.focus-mode .settings-btn{opacity:.15;pointer-events:none}
+body.focus-mode .main{margin-left:0}
+
+/* ===== TIMER ===== */
+.timer-widget{position:fixed;bottom:60px;right:12px;background:var(--c-surface);border:2px solid var(--c-primary);border-radius:12px;padding:10px 16px;z-index:150;font-size:.85rem;display:none;box-shadow:0 4px 16px var(--c-shadow)}
+.timer-widget.show{display:block}
+.timer-widget .timer-display{font-size:1.4rem;font-weight:800;font-variant-numeric:tabular-nums;color:var(--c-primary)}
+
+/* ===== SVG FIGURES ===== */
+.figure-container{margin:1.5rem 0;text-align:center}
+.figure-container svg{max-width:100%;height:auto}
+.figure-caption{font-size:.85rem;color:var(--c-text-muted);font-style:italic;margin-top:6px}
+.figure-container .fig-interactive{cursor:pointer}
+.fig-tooltip{position:absolute;background:var(--c-surface);border:2px solid var(--c-primary);border-radius:8px;padding:10px;font-size:.82rem;max-width:240px;z-index:50;box-shadow:0 4px 12px var(--c-shadow);display:none}
+
+/* ===== GLOSSARY POPUP ===== */
+.gloss{border-bottom:2px dotted var(--c-primary);cursor:help;position:relative}
+.gloss-popup{position:absolute;bottom:100%;left:50%;transform:translateX(-50%);background:var(--c-surface);border:2px solid var(--c-primary);border-radius:8px;padding:10px;font-size:.82rem;width:220px;z-index:50;display:none;box-shadow:0 4px 12px var(--c-shadow)}
+.gloss:hover .gloss-popup,.gloss:focus .gloss-popup{display:block}
+
+/* ===== FLIPCARDS ===== */
+.flipcard{perspective:600px;margin:8px 0;cursor:pointer}
+.flipcard-inner{position:relative;transition:transform .5s;transform-style:preserve-3d;min-height:100px}
+.flipcard.flipped .flipcard-inner{transform:rotateY(180deg)}
+.flipcard-front,.flipcard-back{backface-visibility:hidden;border-radius:10px;padding:16px;position:absolute;inset:0;display:flex;align-items:center;justify-content:center;text-align:center}
+.flipcard-front{background:var(--c-blue-bg);border:2px solid var(--c-blue)}
+.flipcard-back{background:var(--c-green-bg);border:2px solid var(--c-green);transform:rotateY(180deg)}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+.section.active{animation:fadeIn .4s ease}
+@media(prefers-reduced-motion:reduce){.section.active{animation:none}.flipcard-inner{transition:none}}
+body.reduce-motion .section.active{animation:none}
+body.reduce-motion .flipcard-inner{transition:none}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:900px){
+  .sidebar{transform:translateX(-100%)}
+  .sidebar.open{transform:translateX(0)}
+  .hamburger{display:flex}
+  .main{margin-left:0}
+  .tts-bar{left:0}
+  .nav-bottom{flex-direction:column}
+}
+
+/* ===== PRINT ===== */
+@media print{
+  .sidebar,.hamburger,.settings-btn,.tts-bar,.nav-bottom,.settings-overlay,.timer-widget,.reading-ruler,.print-panel,.check-studied{display:none!important}
+  .main{margin-left:0}
+  .section{display:block!important;page-break-before:always;padding:20px 0}
+  .section:first-child{page-break-before:auto}
+  body{font-size:11pt;line-height:1.5}
+  .card,.box,.id-card,.quiz-q,.vf-item{break-inside:avoid}
+  body.print-no-figures .figure-container{display:none}
+  body.print-no-activities .quiz-q,body.print-no-activities .vf-item,body.print-no-activities .check-studied{display:none}
+}
+
+/* ===== ADAPTATION BADGE ===== */
+.adapt-badge{display:inline-flex;align-items:center;gap:4px;background:var(--c-purple-bg);color:var(--c-purple);padding:3px 10px;border-radius:12px;font-size:.75rem;font-weight:700;margin:4px}
+</style>
+</head>
+<body>
+<a href="#contenido" class="skip-link">Saltar al contenido</a>
+
+<!-- READING RULER -->
+<div class="reading-ruler" id="ruler"></div>
+
+<!-- HAMBURGER -->
+<button class="hamburger" id="hamburgerBtn" aria-label="Abrir menú">☰</button>
+
+<!-- SETTINGS BUTTON -->
+<button class="settings-btn" id="settingsBtn" aria-label="Ajustes de accesibilidad">⚙</button>
+
+<!-- SIDEBAR -->
+<nav class="sidebar" id="sidebar" aria-label="Navegación de la guía">
+<div class="sidebar-header">
+<h2>Teorías del Origen de la Vida</h2>
+<span class="badge">9.° Período IV — Guía Adaptada</span>
+</div>
+<div class="sidebar-nav" id="sidebarNav">
+<a href="#" data-section="sec0" class="active"><span class="icon">📋</span>Cómo usar esta guía<span class="check">✓</span></a>
+<a href="#" data-section="sec1"><span class="icon">🌍</span>Panorama general<span class="check">✓</span></a>
+<a href="#" data-section="sec2"><span class="icon">🔬</span>¿Cómo empezó la vida?<span class="check">✓</span></a>
+<a href="#" data-section="sec3"><span class="icon">🧪</span>Generación espontánea<span class="check">✓</span></a>
+<a href="#" data-section="sec4"><span class="icon">🧫</span>Biogénesis: la vida viene de la vida<span class="check">✓</span></a>
+<a href="#" data-section="sec5"><span class="icon">🌊</span>Origen químico de la vida<span class="check">✓</span></a>
+<a href="#" data-section="sec6"><span class="icon">🦕</span>Catastrofismo<span class="check">✓</span></a>
+<a href="#" data-section="sec7"><span class="icon">🦒</span>Lamarck: los caracteres adquiridos<span class="check">✓</span></a>
+<a href="#" data-section="sec8"><span class="icon">🐢</span>Darwin: selección natural<span class="check">✓</span></a>
+<a href="#" data-section="sec9"><span class="icon">🧬</span>Teoría sintética de la evolución<span class="check">✓</span></a>
+<a href="#" data-section="sec10"><span class="icon">🦴</span>Pruebas de la evolución<span class="check">✓</span></a>
+<a href="#" data-section="sec11"><span class="icon">🗺</span>Eras geológicas<span class="check">✓</span></a>
+<a href="#" data-section="sec12"><span class="icon">📚</span>Síntesis y glosario<span class="check">✓</span></a>
+<a href="#" data-section="sec13"><span class="icon">✏</span>Autoevaluación final<span class="check">✓</span></a>
+</div>
+<div class="progress-bar">
+<div class="track"><div class="fill" id="progressFill" style="width:0%"></div></div>
+<div class="label" id="progressLabel">0 de 14 secciones</div>
+</div>
+</nav>
+
+<!-- SETTINGS OVERLAY -->
+<div class="settings-overlay" id="settingsOverlay">
+<div class="settings-panel">
+<h2>Ajustes de accesibilidad</h2>
+
+<div class="settings-group"><label>Tamaño de texto</label>
+<div class="btn-row" data-setting="fontsize">
+<button data-val="16px">Pequeño</button><button data-val="18px" class="active">Normal</button><button data-val="21px">Grande</button><button data-val="24px">Muy grande</button></div></div>
+
+<div class="settings-group"><label>Espacio entre líneas</label>
+<div class="btn-row" data-setting="lineheight">
+<button data-val="1.5">Junto</button><button data-val="1.8" class="active">Normal</button><button data-val="2.2">Amplio</button><button data-val="2.6">Muy amplio</button></div></div>
+
+<div class="settings-group"><label>Tipo de letra</label>
+<div class="btn-row" data-setting="fontfamily">
+<button data-val="system-ui, sans-serif" class="active">Normal</button><button data-val="Georgia, serif">Serif</button><button data-val="Verdana, sans-serif">Alta legibilidad</button></div></div>
+
+<div class="settings-group"><label>Tema de color</label>
+<div class="btn-row" data-setting="theme">
+<button data-val="light" class="active">Claro</button><button data-val="cream">Crema</button><button data-val="dark">Oscuro</button><button data-val="contrast">Alto contraste</button></div></div>
+
+<div class="settings-group"><label>Ancho de columna</label>
+<div class="btn-row" data-setting="maxwidth">
+<button data-val="600px">Estrecho</button><button data-val="760px" class="active">Normal</button><button data-val="960px">Ancho</button></div></div>
+
+<div class="settings-group"><label>Herramientas</label>
+<div class="btn-row">
+<button id="toggleRuler">Regla de lectura</button>
+<button id="toggleFocus">Modo enfoque</button>
+<button id="toggleMotion">Reducir movimiento</button>
+<button id="toggleTimer">Temporizador</button>
+</div></div>
+
+<button class="settings-close" id="settingsClose">Cerrar ajustes</button>
+</div>
+</div>
+
+<!-- TIMER -->
+<div class="timer-widget" id="timerWidget">
+<div>Temporizador</div>
+<div class="timer-display" id="timerDisplay">00:00</div>
+<div style="margin-top:6px;display:flex;gap:4px;flex-wrap:wrap">
+<button onclick="startTimer(5)">5 min</button>
+<button onclick="startTimer(10)">10 min</button>
+<button onclick="startTimer(15)">15 min</button>
+<button onclick="startTimer(25)">25 min</button>
+<button onclick="stopTimer()">Detener</button>
+</div>
+</div>
+
+<!-- TTS BAR -->
+<div class="tts-bar" id="ttsBar">
+<button id="ttsPause">Pausar</button>
+<button id="ttsStop">Detener</button>
+<span class="tts-info" id="ttsInfo">Listo</span>
+<label style="font-size:.8rem">Velocidad: <input type="range" id="ttsRate" min="0.6" max="1.4" step="0.1" value="0.9"></label>
+<select id="ttsVoice" style="max-width:180px"></select>
+</div>
+
+<!-- ===== MAIN CONTENT ===== -->
+<main class="main" id="contenido">
+
+<!-- SEC 0: COMO USAR -->
+<div class="section active" id="sec0">
+<h1>Cómo usar esta guía</h1>
+<p class="adapt-badge">Guía adaptada con ajustes razonables</p>
+
+<div class="orientation">
+<div class="ori-title">Antes de empezar</div>
+<p>Esta guía está hecha para que puedas estudiar <strong>a tu propio ritmo</strong>. Cada tema tiene la misma estructura para que siempre sepas qué esperar.</p>
+</div>
+
+<div class="box box-blue">
+<div class="box-label">Estructura de cada tema</div>
+<div class="steps">
+<div class="step"><strong>Tarjeta de orientación</strong> — Te dice cuánto tiempo toma, qué pasos seguir y qué vas a aprender.</div>
+<div class="step"><strong>Explicación paso a paso</strong> — Ideas cortas, con palabras sencillas.</div>
+<div class="step"><strong>Figura o imagen</strong> — Un dibujo que te ayuda a entender.</div>
+<div class="step"><strong>Ejemplo</strong> (caja naranja) — Un caso concreto para que veas cómo funciona.</div>
+<div class="step"><strong>Resumen</strong> (caja verde) — Las ideas más importantes del tema.</div>
+<div class="step"><strong>Conexión con la vida</strong> (caja morada) — Para qué te sirve esto.</div>
+<div class="step"><strong>Mini-evaluación</strong> — Preguntas para verificar lo que aprendiste.</div>
+<div class="step"><strong>Casilla "Doy por estudiado"</strong> — Márcala cuando termines el tema.</div>
+</div>
+</div>
+
+<div class="box box-green">
+<div class="box-label">Colores que te ayudan</div>
+<p><strong style="color:var(--c-blue)">Azul</strong> = Idea importante. <strong style="color:var(--c-orange)">Naranja</strong> = Ejemplo. <strong style="color:var(--c-green)">Verde</strong> = Resumen. <strong style="color:var(--c-red)">Rojo</strong> = Cuidado, no confundir. <strong style="color:var(--c-purple)">Morado</strong> = Conexión con tu vida.</p>
+</div>
+
+<div class="box box-yellow">
+<div class="box-label">Herramientas disponibles</div>
+<p>Usa el botón <strong>⚙ Ajustes</strong> (arriba a la derecha) para cambiar el tamaño de letra, el color de fondo, activar la regla de lectura o un temporizador de estudio.</p>
+<p>El botón <strong>"Escuchar"</strong> que aparece en cada sección lee el texto en voz alta.</p>
+</div>
+
+<div class="print-panel">
+<strong>Imprimir esta guía</strong><br>
+<label><input type="checkbox" id="printFigures" checked> Incluir figuras</label>
+<label><input type="checkbox" id="printActivities" checked> Incluir actividades</label>
+<button onclick="doPrint()">Imprimir / Guardar PDF</button>
+</div>
+
+<div class="check-studied"><input type="checkbox" id="chk0" onchange="markStudied('sec0')"><label for="chk0">Entendí cómo usar esta guía</label></div>
+
+<div class="nav-bottom">
+<button disabled>Anterior</button>
+<button onclick="goToSection('sec1')">Siguiente: Panorama general</button>
+</div>
+</div>
+
+<!-- SEC 1: PANORAMA -->
+<div class="section" id="sec1">
+<h1>Panorama general</h1>
+<button class="tts-section-btn" onclick="readSection('sec1')">Escuchar esta sección</button>
+
+<div class="orientation">
+<div class="ori-title">Tiempo estimado: 10 minutos</div>
+<p><strong>Lo que vas a aprender:</strong> Por qué los científicos se preguntan de dónde vienen los seres vivos y cómo han cambiado las explicaciones a lo largo del tiempo.</p>
+</div>
+
+<div class="readable">
+<h2>La gran pregunta</h2>
+<p>Desde siempre, los seres humanos se han hecho una pregunta muy importante: <strong>¿De dónde vienen los seres vivos?</strong></p>
+<p>A lo largo de la historia, se han dado muchas respuestas diferentes. Algunas eran <strong>mitos y leyendas</strong>. Otras son <strong>explicaciones científicas</strong> basadas en experimentos y pruebas.</p>
+
+<div class="box box-blue">
+<div class="box-label">Idea clave</div>
+<p>En esta unidad vas a estudiar las principales <strong>teorías científicas</strong> que explican:</p>
+<p>1. ¿Cómo empezó la vida en la Tierra?</p>
+<p>2. ¿Cómo se formaron todas las especies que existen?</p>
+<p>3. ¿Qué pruebas tenemos de que los seres vivos cambian con el tiempo?</p>
+</div>
+
+<div class="figure-container">
+<svg viewBox="0 0 700 280" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Línea del tiempo de las principales teorías sobre el origen de la vida">
+<rect x="0" y="0" width="700" height="280" fill="var(--c-surface)" rx="12"/>
+<text x="350" y="30" text-anchor="middle" font-size="15" font-weight="700" fill="var(--c-text)">Línea del tiempo de las teorías</text>
+<!-- Línea -->
+<line x1="40" y1="140" x2="660" y2="140" stroke="var(--c-primary)" stroke-width="3"/>
+<!-- Puntos -->
+<circle cx="80" cy="140" r="10" fill="var(--c-orange)"/><text x="80" y="180" text-anchor="middle" font-size="10" fill="var(--c-text)">Antigüedad</text><text x="80" y="195" text-anchor="middle" font-size="9" fill="var(--c-text-muted)">Generación</text><text x="80" y="208" text-anchor="middle" font-size="9" fill="var(--c-text-muted)">espontánea</text>
+<circle cx="200" cy="140" r="10" fill="var(--c-green)"/><text x="200" y="110" text-anchor="middle" font-size="10" fill="var(--c-text)">1668-1859</text><text x="200" y="95" text-anchor="middle" font-size="9" fill="var(--c-text-muted)">Redi, Pasteur</text><text x="200" y="80" text-anchor="middle" font-size="9" fill="var(--c-text-muted)">Biogénesis</text>
+<circle cx="340" cy="140" r="10" fill="var(--c-blue)"/><text x="340" y="180" text-anchor="middle" font-size="10" fill="var(--c-text)">1809</text><text x="340" y="195" text-anchor="middle" font-size="9" fill="var(--c-text-muted)">Lamarck</text>
+<circle cx="450" cy="140" r="10" fill="var(--c-purple)"/><text x="450" y="110" text-anchor="middle" font-size="10" fill="var(--c-text)">1859</text><text x="450" y="95" text-anchor="middle" font-size="9" fill="var(--c-text-muted)">Darwin</text><text x="450" y="80" text-anchor="middle" font-size="9" fill="var(--c-text-muted)">Selección natural</text>
+<circle cx="540" cy="140" r="10" fill="var(--c-red)"/><text x="540" y="180" text-anchor="middle" font-size="10" fill="var(--c-text)">1920s</text><text x="540" y="195" text-anchor="middle" font-size="9" fill="var(--c-text-muted)">Oparin</text><text x="540" y="208" text-anchor="middle" font-size="9" fill="var(--c-text-muted)">Origen químico</text>
+<circle cx="630" cy="140" r="10" fill="var(--c-yellow)"/><text x="630" y="110" text-anchor="middle" font-size="10" fill="var(--c-text)">1940s+</text><text x="630" y="95" text-anchor="middle" font-size="9" fill="var(--c-text-muted)">Teoría sintética</text>
+</svg>
+<div class="figure-caption">Figura 1. Línea del tiempo que muestra cómo fueron apareciendo las principales teorías sobre el origen de la vida y la evolución. Esquema didáctico simplificado.</div>
+</div>
+
+<div class="box box-green">
+<div class="box-label">En resumen</div>
+<p>La ciencia ha construido varias explicaciones sobre el origen de la vida. Cada nueva teoría se basó en <strong>experimentos y pruebas</strong>. En esta guía vas a conocer cada una, entender sus diferencias y aprender a compararlas.</p>
+</div>
+
+<div class="box box-purple">
+<div class="box-label">Conexión con tu vida</div>
+<p>Cuando te preguntas por qué existen tantos animales diferentes, o por qué los hijos se parecen a los padres, estás haciéndote las mismas preguntas que los científicos llevan siglos investigando.</p>
+</div>
+</div>
+
+<div class="check-studied"><input type="checkbox" id="chk1" onchange="markStudied('sec1')"><label for="chk1">Doy por estudiado: Panorama general</label></div>
+<div class="nav-bottom">
+<button onclick="goToSection('sec0')">Anterior: Cómo usar esta guía</button>
+<button onclick="goToSection('sec2')">Siguiente: ¿Cómo empezó la vida?</button>
+</div>
+</div>
+
+<!-- SEC 2: COMO EMPEZO LA VIDA -->
+<div class="section" id="sec2">
+<h1>¿Cómo empezó la vida?</h1>
+<button class="tts-section-btn" onclick="readSection('sec2')">Escuchar esta sección</button>
+
+<div class="orientation">
+<div class="ori-title">Tiempo estimado: 10 minutos | 3 pasos</div>
+<p><strong>Qué vas a lograr:</strong> Entender las dos grandes preguntas sobre el origen de la vida y distinguir entre explicaciones antiguas y científicas.</p>
+</div>
+
+<div class="readable">
+<h2>Dos preguntas diferentes</h2>
+<p>Parece una sola pregunta, pero en realidad son <strong>dos preguntas</strong>:</p>
+
+<div class="steps">
+<div class="step"><strong>¿Cómo apareció la vida por primera vez en la Tierra?</strong> — Esto pasó hace miles de millones de años. Nadie estaba ahí para verlo, pero los científicos buscan pistas.</div>
+<div class="step"><strong>¿Cómo se formaron tantas especies diferentes?</strong> — Hay millones de especies: peces, aves, insectos, plantas... ¿Cómo llegaron a ser tan diferentes?</div>
+<div class="step"><strong>Las respuestas fueron cambiando</strong> — Al principio la gente explicaba todo con mitos. Luego vinieron los experimentos y las pruebas científicas.</div>
+</div>
+
+<div class="box box-orange">
+<div class="box-label">Ejemplo para entender</div>
+<p>Imagina que encuentras un río lleno de peces de colores diferentes. Te haces dos preguntas: ¿De dónde salió el primer pez? y ¿Por qué hay tantos tipos de peces? Son preguntas parecidas pero diferentes. La primera habla del <strong>origen de la vida</strong> y la segunda habla de la <strong>evolución</strong>.</p>
+</div>
+
+<div class="box box-green">
+<div class="box-label">En resumen</div>
+<p>El origen de la vida se estudia desde dos ángulos: cómo apareció la primera forma de vida, y cómo a partir de ella surgieron millones de especies. Las explicaciones pasaron de ser mitos a ser teorías científicas con pruebas.</p>
+</div>
+
+<div class="box box-purple">
+<div class="box-label">Conexión con tu vida</div>
+<p>Cuando ves un documental sobre dinosaurios o animales que ya no existen, estás viendo parte de la historia de cómo la vida ha cambiado en la Tierra.</p>
+</div>
+
+<div class="quiz-q" data-correct="b">
+<p>¿Cuál es la diferencia entre preguntar por el origen de la vida y preguntar por la evolución?</p>
+<label><input type="radio" name="q2a" value="a"> Son exactamente la misma pregunta</label>
+<label><input type="radio" name="q2a" value="b"> Una pregunta es sobre cómo empezó la vida y la otra es sobre cómo aparecieron tantas especies</label>
+<label><input type="radio" name="q2a" value="c"> La evolución estudia solo los humanos</label>
+<div class="feedback"></div>
+</div>
+</div>
+
+<div class="check-studied"><input type="checkbox" id="chk2" onchange="markStudied('sec2')"><label for="chk2">Doy por estudiado: ¿Cómo empezó la vida?</label></div>
+<div class="nav-bottom">
+<button onclick="goToSection('sec1')">Anterior: Panorama general</button>
+<button onclick="goToSection('sec3')">Siguiente: Generación espontánea</button>
+</div>
+</div>
+
+<!-- SEC 3: GENERACION ESPONTANEA -->
+<div class="section" id="sec3">
+<h1>Generación espontánea</h1>
+<button class="tts-section-btn" onclick="readSection('sec3')">Escuchar esta sección</button>
+
+<div class="orientation">
+<div class="ori-title">Tiempo estimado: 12 minutos | 4 pasos</div>
+<p><strong>Qué vas a lograr:</strong> Explicar qué decía la teoría de la generación espontánea y por qué la gente creyó en ella durante mucho tiempo.</p>
+</div>
+
+<div class="readable">
+<h2>¿Qué decía esta teoría?</h2>
+
+<div class="steps">
+<div class="step"><strong>La idea principal:</strong> Los seres vivos pueden aparecer solos a partir de cosas sin vida. Por ejemplo, la gente creía que los gusanos nacían de la carne podrida y que los ratones nacían de la ropa sucia con trigo.</div>
+<div class="step"><strong>¿Quién lo dijo?</strong> El filósofo griego <span class="gloss" tabindex="0">Aristóteles<span class="gloss-popup">Filósofo griego que vivió hace más de 2.300 años. Estudió la naturaleza y propuso ideas sobre los seres vivos.</span></span> (hace más de 2.300 años) fue uno de los primeros en proponer esta idea.</div>
+<div class="step"><strong>¿Por qué la gente lo creyó?</strong> Porque no tenían microscopios ni conocían los microorganismos. Veían que aparecían gusanos en la carne y pensaban que la carne los producía.</div>
+<div class="step"><strong>¿Es correcta?</strong> No. Hoy sabemos que los gusanos vienen de huevos que ponen las moscas. Esta teoría fue refutada con experimentos.</div>
+</div>
+
+<div class="id-card">
+<div class="id-icon">📜</div>
+<div>
+<dl>
+<dt>Teoría</dt><dd>Generación espontánea</dd>
+<dt>Idea central</dt><dd>Los seres vivos nacen solos de la materia sin vida</dd>
+<dt>Autor principal</dt><dd>Aristóteles</dd>
+<dt>Época</dt><dd>Antigüedad (hace más de 2.000 años)</dd>
+<dt>Estado actual</dt><dd>Refutada (demostrada como falsa)</dd>
+</dl>
+</div>
+</div>
+
+<div class="box box-orange">
+<div class="box-label">Ejemplo del documento</div>
+<p>La gente pensaba que si dejabas una camisa sucia con granos de trigo en un rincón oscuro, después de 21 días aparecerían ratones. Hoy sabemos que los ratones llegaban de afuera atraídos por el trigo.</p>
+</div>
+
+<div class="box box-green">
+<div class="box-label">En resumen</div>
+<p>La generación espontánea fue una idea antigua que decía que los seres vivos podían nacer de cosas sin vida. Se creyó por mucho tiempo porque no había herramientas científicas para demostrar lo contrario. Fue <strong>refutada</strong> (demostrada como incorrecta) gracias a experimentos.</p>
+</div>
+
+<div class="box box-purple">
+<div class="box-label">Conexión con la enseñanza</div>
+<p><em>Aporte didáctico:</em> Esta teoría nos enseña algo importante: no debemos creer algo solo porque lo vemos a simple vista. La ciencia necesita experimentos que comprueben las ideas.</p>
+</div>
+
+<div class="quiz-q" data-correct="c">
+<p>¿Qué decía la generación espontánea?</p>
+<label><input type="radio" name="q3a" value="a"> Que los seres vivos evolucionan poco a poco</label>
+<label><input type="radio" name="q3a" value="b"> Que la vida fue creada en un laboratorio</label>
+<label><input type="radio" name="q3a" value="c"> Que los seres vivos podían nacer solos de cosas sin vida</label>
+<div class="feedback"></div>
+</div>
+</div>
+
+<div class="check-studied"><input type="checkbox" id="chk3" onchange="markStudied('sec3')"><label for="chk3">Doy por estudiado: Generación espontánea</label></div>
+<div class="nav-bottom">
+<button onclick="goToSection('sec2')">Anterior: ¿Cómo empezó la vida?</button>
+<button onclick="goToSection('sec4')">Siguiente: Biogénesis</button>
+</div>
+</div>
+
+<!-- SEC 4: BIOGENESIS -->
+<div class="section" id="sec4">
+<h1>Biogénesis: la vida viene de la vida</h1>
+<button class="tts-section-btn" onclick="readSection('sec4')">Escuchar esta sección</button>
+
+<div class="orientation">
+<div class="ori-title">Tiempo estimado: 15 minutos | 4 pasos</div>
+<p><strong>Qué vas a lograr:</strong> Explicar los experimentos de Redi y Pasteur que demostraron que la vida solo viene de otra vida.</p>
+</div>
+
+<div class="readable">
+<h2>¿Qué es la biogénesis?</h2>
+
+<div class="steps">
+<div class="step"><strong>La idea:</strong> Todo ser vivo viene de otro ser vivo. Los gusanos no nacen de la carne. Nacen de huevos que ponen las moscas sobre la carne.</div>
+<div class="step"><strong>Experimento de Redi (1668):</strong> Francesco Redi puso carne en frascos. Unos los dejó abiertos y otros los tapó con una tela. En los frascos abiertos aparecieron gusanos (porque las moscas ponían huevos). En los tapados no aparecieron gusanos.</div>
+<div class="step"><strong>Experimento de Pasteur (1859):</strong> Louis Pasteur usó frascos con cuello de cisne (curvados). El caldo dentro no se pudría porque los microbios del aire quedaban atrapados en la curva. Esto demostró que los microbios no nacían solos del caldo.</div>
+<div class="step"><strong>Conclusión:</strong> Estos experimentos refutaron la generación espontánea y demostraron la <strong>biogénesis</strong>: la vida solo puede venir de otra vida.</div>
+</div>
+
+<div class="figure-container">
+<svg viewBox="0 0 700 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Comparación del experimento de Redi: frascos abiertos vs. tapados">
+<rect x="0" y="0" width="700" height="300" fill="var(--c-surface)" rx="12"/>
+<text x="350" y="30" text-anchor="middle" font-size="14" font-weight="700" fill="var(--c-text)">Experimento de Redi</text>
+<!-- Frasco abierto -->
+<rect x="80" y="80" width="120" height="160" rx="8" fill="var(--c-orange-bg)" stroke="var(--c-orange)" stroke-width="2"/>
+<text x="140" y="70" text-anchor="middle" font-size="11" font-weight="600" fill="var(--c-orange)">ABIERTO</text>
+<text x="140" y="140" text-anchor="middle" font-size="10" fill="var(--c-text)">Carne</text>
+<text x="140" y="160" text-anchor="middle" font-size="20">🪰</text>
+<text x="140" y="200" text-anchor="middle" font-size="10" fill="var(--c-red)">Gusanos</text>
+<text x="140" y="215" text-anchor="middle" font-size="10" fill="var(--c-red)">(de huevos de mosca)</text>
+<!-- Flecha -->
+<text x="350" y="170" text-anchor="middle" font-size="30" fill="var(--c-text-muted)">vs.</text>
+<!-- Frasco tapado -->
+<rect x="500" y="80" width="120" height="160" rx="8" fill="var(--c-green-bg)" stroke="var(--c-green)" stroke-width="2"/>
+<line x1="500" y1="80" x2="620" y2="80" stroke="var(--c-green)" stroke-width="4" stroke-dasharray="6,3"/>
+<text x="560" y="70" text-anchor="middle" font-size="11" font-weight="600" fill="var(--c-green)">TAPADO con tela</text>
+<text x="560" y="140" text-anchor="middle" font-size="10" fill="var(--c-text)">Carne</text>
+<text x="560" y="200" text-anchor="middle" font-size="10" fill="var(--c-green)">Sin gusanos</text>
+<text x="560" y="215" text-anchor="middle" font-size="10" fill="var(--c-green)">(moscas no entran)</text>
+<!-- Conclusión -->
+<text x="350" y="275" text-anchor="middle" font-size="12" font-weight="700" fill="var(--c-primary)">Conclusión: Los gusanos vienen de las moscas, no de la carne</text>
+</svg>
+<div class="figure-caption">Figura 2. Representación simplificada del experimento de Redi. Los frascos abiertos permitían que las moscas pusieran huevos; los tapados no. Esquema didáctico.</div>
+</div>
+
+<div class="box box-green">
+<div class="box-label">En resumen</div>
+<p>Redi y Pasteur demostraron con experimentos que la vida no nace sola. Todo ser vivo viene de otro ser vivo. Esto se llama <strong>biogénesis</strong>.</p>
+</div>
+
+<div class="box box-purple">
+<div class="box-label">Conexión con la enseñanza</div>
+<p><em>Aporte didáctico:</em> Estos experimentos muestran la importancia del método científico: hacer una pregunta, diseñar un experimento, observar los resultados y sacar conclusiones.</p>
+</div>
+
+<div class="quiz-q" data-correct="b">
+<p>¿Qué demostró el experimento de Redi?</p>
+<label><input type="radio" name="q4a" value="a"> Que la carne produce gusanos</label>
+<label><input type="radio" name="q4a" value="b"> Que los gusanos vienen de los huevos que ponen las moscas</label>
+<label><input type="radio" name="q4a" value="c"> Que los frascos cerrados producen más gusanos</label>
+<div class="feedback"></div>
+</div>
+</div>
+
+<div class="check-studied"><input type="checkbox" id="chk4" onchange="markStudied('sec4')"><label for="chk4">Doy por estudiado: Biogénesis</label></div>
+<div class="nav-bottom">
+<button onclick="goToSection('sec3')">Anterior: Generación espontánea</button>
+<button onclick="goToSection('sec5')">Siguiente: Origen químico de la vida</button>
+</div>
+</div>
+
+<!-- SEC 5: ORIGEN QUIMICO -->
+<div class="section" id="sec5">
+<h1>Origen químico de la vida</h1>
+<button class="tts-section-btn" onclick="readSection('sec5')">Escuchar esta sección</button>
+
+<div class="orientation">
+<div class="ori-title">Tiempo estimado: 12 minutos | 3 pasos</div>
+<p><strong>Qué vas a lograr:</strong> Explicar la hipótesis de Oparin-Haldane y el experimento de Miller-Urey sobre cómo pudieron formarse las primeras moléculas de la vida.</p>
+</div>
+
+<div class="readable">
+<h2>¿Cómo se formaron las primeras moléculas de la vida?</h2>
+
+<div class="steps">
+<div class="step"><strong>La hipótesis de Oparin y Haldane (años 1920):</strong> La Tierra primitiva era muy diferente a la de hoy. No había oxígeno en el aire. Había gases como metano, amoníaco e hidrógeno. Con los rayos y la energía del sol, estos gases se combinaron y formaron las primeras moléculas orgánicas (los "ladrillos" de la vida).</div>
+<div class="step"><strong>El experimento de Miller-Urey (1953):</strong> Stanley Miller y Harold Urey recrearon en un laboratorio las condiciones de la Tierra primitiva. Mezclaron los gases y les aplicaron descargas eléctricas (como rayos). Después de unos días, encontraron <strong>aminoácidos</strong>, que son los bloques básicos de las proteínas.</div>
+<div class="step"><strong>¿Qué significa esto?</strong> Que las moléculas necesarias para la vida pudieron formarse de manera natural, sin que nadie las fabricara. Con el tiempo, estas moléculas se hicieron más complejas hasta formar las primeras células.</div>
+</div>
+
+<div class="id-card">
+<div class="id-icon">🧪</div>
+<div>
+<dl>
+<dt>Hipótesis</dt><dd>Origen químico de la vida (Oparin-Haldane)</dd>
+<dt>Idea central</dt><dd>Las primeras moléculas de la vida se formaron a partir de gases con energía (rayos)</dd>
+<dt>Experimento clave</dt><dd>Miller-Urey (1953): recrearon la Tierra primitiva en un laboratorio</dd>
+<dt>Resultado</dt><dd>Se formaron aminoácidos (bloques de las proteínas)</dd>
+</dl>
+</div>
+</div>
+
+<div class="box box-green">
+<div class="box-label">En resumen</div>
+<p>La hipótesis del origen químico dice que la vida se formó a partir de reacciones químicas naturales en la Tierra primitiva. Miller y Urey demostraron en laboratorio que es posible crear aminoácidos a partir de gases simples y energía.</p>
+</div>
+
+<div class="quiz-q" data-correct="a">
+<p>¿Qué obtuvieron Miller y Urey en su experimento?</p>
+<label><input type="radio" name="q5a" value="a"> Aminoácidos (bloques de las proteínas)</label>
+<label><input type="radio" name="q5a" value="b"> Células completas</label>
+<label><input type="radio" name="q5a" value="c"> Animales pequeños</label>
+<div class="feedback"></div>
+</div>
+</div>
+
+<div class="check-studied"><input type="checkbox" id="chk5" onchange="markStudied('sec5')"><label for="chk5">Doy por estudiado: Origen químico de la vida</label></div>
+<div class="nav-bottom">
+<button onclick="goToSection('sec4')">Anterior: Biogénesis</button>
+<button onclick="goToSection('sec6')">Siguiente: Catastrofismo</button>
+</div>
+</div>
+
+<!-- SEC 6: CATASTROFISMO -->
+<div class="section" id="sec6">
+<h1>Catastrofismo</h1>
+<button class="tts-section-btn" onclick="readSection('sec6')">Escuchar esta sección</button>
+
+<div class="orientation">
+<div class="ori-title">Tiempo estimado: 8 minutos | 2 pasos</div>
+<p><strong>Qué vas a lograr:</strong> Explicar qué proponía el catastrofismo y por qué fue superado por otras teorías.</p>
+</div>
+
+<div class="readable">
+<div class="steps">
+<div class="step"><strong>¿Qué decía?</strong> Georges Cuvier (alrededor de 1800) propuso que la Tierra había sufrido <strong>catástrofes enormes</strong> (como inundaciones o terremotos gigantes) que destruían a los seres vivos. Después de cada catástrofe, aparecían nuevas especies diferentes.</div>
+<div class="step"><strong>¿Por qué se superó?</strong> Cuvier no podía explicar de dónde venían las nuevas especies después de cada catástrofe. Otras teorías, como la de Darwin, dieron mejores explicaciones con más pruebas.</div>
+</div>
+
+<div class="id-card">
+<div class="id-icon">🌋</div>
+<div>
+<dl>
+<dt>Teoría</dt><dd>Catastrofismo</dd>
+<dt>Autor</dt><dd>Georges Cuvier</dd>
+<dt>Idea central</dt><dd>Grandes catástrofes destruían a los seres vivos y aparecían nuevas especies</dd>
+<dt>Limitación</dt><dd>No explicaba de dónde venían las nuevas especies</dd>
+</dl>
+</div>
+</div>
+
+<div class="box box-green">
+<div class="box-label">En resumen</div>
+<p>El catastrofismo decía que grandes desastres naturales eliminaban a las especies y luego aparecían otras nuevas. Fue un paso importante, pero no tenía explicación completa.</p>
+</div>
+</div>
+
+<div class="check-studied"><input type="checkbox" id="chk6" onchange="markStudied('sec6')"><label for="chk6">Doy por estudiado: Catastrofismo</label></div>
+<div class="nav-bottom">
+<button onclick="goToSection('sec5')">Anterior: Origen químico</button>
+<button onclick="goToSection('sec7')">Siguiente: Lamarck</button>
+</div>
+</div>
+
+<!-- SEC 7: LAMARCK -->
+<div class="section" id="sec7">
+<h1>Lamarck: los caracteres adquiridos</h1>
+<button class="tts-section-btn" onclick="readSection('sec7')">Escuchar esta sección</button>
+
+<div class="orientation">
+<div class="ori-title">Tiempo estimado: 12 minutos | 3 pasos</div>
+<p><strong>Qué vas a lograr:</strong> Explicar la teoría de Lamarck con ejemplos y entender por qué no es aceptada hoy.</p>
+</div>
+
+<div class="readable">
+<div class="steps">
+<div class="step"><strong>¿Quién fue Lamarck?</strong> Jean-Baptiste Lamarck (1809) fue uno de los primeros científicos en decir que los seres vivos <strong>cambian con el tiempo</strong>. Eso fue muy importante.</div>
+<div class="step"><strong>Su idea principal — "uso y desuso":</strong> Si un animal usa mucho una parte de su cuerpo, esa parte crece y se hace más fuerte. Si no la usa, se debilita. Y lo más importante: Lamarck decía que esos cambios <strong>se pasan a los hijos</strong>.</div>
+<div class="step"><strong>¿Es correcta?</strong> La idea de que los seres vivos cambian con el tiempo sí es correcta. Pero la idea de que los cambios que un animal adquiere durante su vida se heredan a los hijos fue <strong>rechazada</strong>. Hoy sabemos que lo que se hereda es la información genética (ADN), no los cambios del cuerpo.</div>
+</div>
+
+<div class="box box-orange">
+<div class="box-label">Ejemplo clásico: la jirafa</div>
+<p><strong>Según Lamarck:</strong> Las jirafas estiraban el cuello para alcanzar las hojas altas. Con el tiempo, el cuello se hacía más largo. Y ese cuello largo se heredaba a las crías.</p>
+<p><strong>Lo que realmente pasa:</strong> Nacían jirafas con cuellos de diferentes tamaños. Las de cuello más largo podían comer más y sobrevivían mejor. Pasaban sus genes de cuello largo a sus crías.</p>
+</div>
+
+<div class="box box-red">
+<div class="box-label">Cuidado, no confundir</div>
+<p>Si un papá va al gimnasio y se hace muy musculoso, sus hijos NO nacen musculosos. Los cambios del cuerpo durante la vida no se heredan. Lo que se hereda son los genes.</p>
+</div>
+
+<div class="box box-green">
+<div class="box-label">En resumen</div>
+<p>Lamarck fue importante porque propuso que los seres vivos cambian. Pero su explicación de <strong>cómo</strong> cambian (herencia de caracteres adquiridos) fue rechazada. Darwin daría una mejor explicación.</p>
+</div>
+</div>
+
+<div class="check-studied"><input type="checkbox" id="chk7" onchange="markStudied('sec7')"><label for="chk7">Doy por estudiado: Lamarck</label></div>
+<div class="nav-bottom">
+<button onclick="goToSection('sec6')">Anterior: Catastrofismo</button>
+<button onclick="goToSection('sec8')">Siguiente: Darwin</button>
+</div>
+</div>
+
+<!-- SEC 8: DARWIN -->
+<div class="section" id="sec8">
+<h1>Darwin: la selección natural</h1>
+<button class="tts-section-btn" onclick="readSection('sec8')">Escuchar esta sección</button>
+
+<div class="orientation">
+<div class="ori-title">Tiempo estimado: 15 minutos | 4 pasos</div>
+<p><strong>Qué vas a lograr:</strong> Explicar la teoría de la selección natural de Darwin y dar ejemplos de cómo funciona.</p>
+</div>
+
+<div class="readable">
+<div class="steps">
+<div class="step"><strong>¿Quién fue Darwin?</strong> Charles Darwin (1859) publicó el libro "El origen de las especies". Es la teoría más importante sobre la evolución.</div>
+<div class="step"><strong>La idea de la selección natural:</strong> En cada grupo de animales hay diferencias naturales. Algunos son más rápidos, otros más fuertes, otros de diferente color. Los que tienen características que les ayudan a sobrevivir en su ambiente tienen más hijos. Con el tiempo, esas características se hacen más comunes en la población.</div>
+<div class="step"><strong>El viaje del Beagle:</strong> Darwin viajó por el mundo en un barco llamado el Beagle. En las Islas Galápagos observó que los <strong>pinzones</strong> (pájaros pequeños) de cada isla tenían picos diferentes según el alimento disponible. Esto le dio la idea de la selección natural.</div>
+<div class="step"><strong>¿Qué lo diferencia de Lamarck?</strong> Lamarck decía que los animales cambian porque se esfuerzan (uso y desuso). Darwin decía que los animales ya nacen con diferencias y el ambiente "selecciona" a los más aptos.</div>
+</div>
+
+<div class="figure-container">
+<svg viewBox="0 0 700 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagrama de la selección natural en cuatro pasos">
+<rect x="0" y="0" width="700" height="320" fill="var(--c-surface)" rx="12"/>
+<text x="350" y="30" text-anchor="middle" font-size="14" font-weight="700" fill="var(--c-text)">La selección natural en 4 pasos</text>
+<!-- Paso 1 -->
+<rect x="20" y="50" width="150" height="110" rx="10" fill="var(--c-blue-bg)" stroke="var(--c-blue)" stroke-width="2"/>
+<text x="95" y="75" text-anchor="middle" font-size="11" font-weight="700" fill="var(--c-blue)">1. Variación</text>
+<text x="95" y="100" text-anchor="middle" font-size="9.5" fill="var(--c-text)">Los individuos de</text>
+<text x="95" y="115" text-anchor="middle" font-size="9.5" fill="var(--c-text)">una especie son</text>
+<text x="95" y="130" text-anchor="middle" font-size="9.5" fill="var(--c-text)">diferentes entre sí</text>
+<text x="95" y="148" text-anchor="middle" font-size="16">🐛🐛🐛</text>
+<!-- Flecha -->
+<text x="190" y="108" font-size="20" fill="var(--c-text-muted)">→</text>
+<!-- Paso 2 -->
+<rect x="200" y="50" width="150" height="110" rx="10" fill="var(--c-orange-bg)" stroke="var(--c-orange)" stroke-width="2"/>
+<text x="275" y="75" text-anchor="middle" font-size="11" font-weight="700" fill="var(--c-orange)">2. Competencia</text>
+<text x="275" y="100" text-anchor="middle" font-size="9.5" fill="var(--c-text)">Luchan por comida,</text>
+<text x="275" y="115" text-anchor="middle" font-size="9.5" fill="var(--c-text)">espacio y parejas.</text>
+<text x="275" y="130" text-anchor="middle" font-size="9.5" fill="var(--c-text)">No todos sobreviven</text>
+<text x="275" y="148" text-anchor="middle" font-size="16">⚔</text>
+<!-- Flecha -->
+<text x="370" y="108" font-size="20" fill="var(--c-text-muted)">→</text>
+<!-- Paso 3 -->
+<rect x="380" y="50" width="150" height="110" rx="10" fill="var(--c-green-bg)" stroke="var(--c-green)" stroke-width="2"/>
+<text x="455" y="75" text-anchor="middle" font-size="11" font-weight="700" fill="var(--c-green)">3. Supervivencia</text>
+<text x="455" y="100" text-anchor="middle" font-size="9.5" fill="var(--c-text)">Los más adaptados</text>
+<text x="455" y="115" text-anchor="middle" font-size="9.5" fill="var(--c-text)">sobreviven y se</text>
+<text x="455" y="130" text-anchor="middle" font-size="9.5" fill="var(--c-text)">reproducen más</text>
+<text x="455" y="148" text-anchor="middle" font-size="16">✅</text>
+<!-- Flecha -->
+<text x="550" y="108" font-size="20" fill="var(--c-text-muted)">→</text>
+<!-- Paso 4 -->
+<rect x="560" y="50" width="120" height="110" rx="10" fill="var(--c-purple-bg)" stroke="var(--c-purple)" stroke-width="2"/>
+<text x="620" y="75" text-anchor="middle" font-size="11" font-weight="700" fill="var(--c-purple)">4. Herencia</text>
+<text x="620" y="100" text-anchor="middle" font-size="9.5" fill="var(--c-text)">Pasan sus genes</text>
+<text x="620" y="115" text-anchor="middle" font-size="9.5" fill="var(--c-text)">a la siguiente</text>
+<text x="620" y="130" text-anchor="middle" font-size="9.5" fill="var(--c-text)">generación</text>
+<text x="620" y="148" text-anchor="middle" font-size="16">🧬</text>
+<!-- Resultado -->
+<rect x="150" y="200" width="400" height="60" rx="10" fill="var(--c-primary-light)" stroke="var(--c-primary)" stroke-width="2"/>
+<text x="350" y="225" text-anchor="middle" font-size="12" font-weight="700" fill="var(--c-primary)">Resultado: La especie cambia con el tiempo</text>
+<text x="350" y="245" text-anchor="middle" font-size="10" fill="var(--c-text)">Las características útiles se vuelven más comunes</text>
+<!-- Flecha -->
+<line x1="350" y1="160" x2="350" y2="200" stroke="var(--c-primary)" stroke-width="2" marker-end="url(#arr)"/>
+<defs><marker id="arr" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8Z" fill="var(--c-primary)"/></marker></defs>
+</svg>
+<div class="figure-caption">Figura 3. La selección natural funciona en cuatro pasos: variación, competencia, supervivencia de los más adaptados, y herencia de esas características. Esquema didáctico simplificado.</div>
+</div>
+
+<div class="box box-green">
+<div class="box-label">En resumen</div>
+<p>Darwin descubrió que los seres vivos evolucionan por <strong>selección natural</strong>: los más adaptados al ambiente sobreviven, se reproducen más y pasan sus características a la siguiente generación. Con el tiempo, las especies cambian.</p>
+</div>
+
+<div class="quiz-q" data-correct="b">
+<p>¿Qué significa la selección natural?</p>
+<label><input type="radio" name="q8a" value="a"> Los animales eligen a qué especie pertenecer</label>
+<label><input type="radio" name="q8a" value="b"> Los individuos mejor adaptados al ambiente sobreviven y se reproducen más</label>
+<label><input type="radio" name="q8a" value="c"> Los animales se vuelven más fuertes si hacen ejercicio</label>
+<div class="feedback"></div>
+</div>
+</div>
+
+<div class="check-studied"><input type="checkbox" id="chk8" onchange="markStudied('sec8')"><label for="chk8">Doy por estudiado: Darwin y la selección natural</label></div>
+<div class="nav-bottom">
+<button onclick="goToSection('sec7')">Anterior: Lamarck</button>
+<button onclick="goToSection('sec9')">Siguiente: Teoría sintética</button>
+</div>
+</div>
+
+<!-- SEC 9: TEORIA SINTETICA -->
+<div class="section" id="sec9">
+<h1>Teoría sintética de la evolución</h1>
+<button class="tts-section-btn" onclick="readSection('sec9')">Escuchar esta sección</button>
+
+<div class="orientation">
+<div class="ori-title">Tiempo estimado: 12 minutos | 3 pasos</div>
+<p><strong>Qué vas a lograr:</strong> Entender cómo la genética completó las ideas de Darwin en la teoría moderna de la evolución.</p>
+</div>
+
+<div class="readable">
+<div class="steps">
+<div class="step"><strong>¿Qué le faltaba a Darwin?</strong> Darwin sabía que los seres vivos eran diferentes entre sí, pero no sabía POR QUÉ eran diferentes. No conocía los genes ni el ADN.</div>
+<div class="step"><strong>La genética completa la historia:</strong> En el siglo XX, los científicos juntaron las ideas de Darwin con la genética de Mendel. Descubrieron que las diferencias entre los seres vivos se deben a cambios en el ADN llamados <strong>mutaciones</strong>.</div>
+<div class="step"><strong>La teoría sintética dice:</strong> La evolución ocurre porque: (1) hay mutaciones en el ADN que crean variación, (2) la selección natural actúa sobre esa variación, (3) con el tiempo, las poblaciones cambian. No son los individuos los que evolucionan, sino las <strong>poblaciones</strong>.</div>
+</div>
+
+<div class="box box-blue">
+<div class="box-label">Idea clave</div>
+<p>La teoría sintética = Ideas de Darwin (selección natural) + Genética (mutaciones, ADN, herencia).</p>
+<p>Es la teoría que se acepta hoy en la ciencia.</p>
+</div>
+
+<div class="box box-green">
+<div class="box-label">En resumen</div>
+<p>La teoría sintética une la selección natural de Darwin con la genética. Las mutaciones crean variación, la selección natural elige a los más aptos, y las poblaciones cambian con el tiempo. Esta es la explicación científica actual de la evolución.</p>
+</div>
+</div>
+
+<div class="check-studied"><input type="checkbox" id="chk9" onchange="markStudied('sec9')"><label for="chk9">Doy por estudiado: Teoría sintética</label></div>
+<div class="nav-bottom">
+<button onclick="goToSection('sec8')">Anterior: Darwin</button>
+<button onclick="goToSection('sec10')">Siguiente: Pruebas de la evolución</button>
+</div>
+</div>
+
+<!-- SEC 10: PRUEBAS DE LA EVOLUCION -->
+<div class="section" id="sec10">
+<h1>Pruebas de la evolución</h1>
+<button class="tts-section-btn" onclick="readSection('sec10')">Escuchar esta sección</button>
+
+<div class="orientation">
+<div class="ori-title">Tiempo estimado: 15 minutos | 5 tipos de pruebas</div>
+<p><strong>Qué vas a lograr:</strong> Identificar y explicar las principales pruebas que demuestran que la evolución es real.</p>
+</div>
+
+<div class="readable">
+<h2>¿Cómo sabemos que la evolución es real?</h2>
+<p>Los científicos tienen muchas pruebas. Aquí verás las cinco más importantes:</p>
+
+<div class="id-card">
+<div class="id-icon">🦴</div>
+<div>
+<dl>
+<dt>1. Fósiles</dt><dd>Restos de seres vivos que vivieron hace millones de años. Muestran cómo eran los animales del pasado y cómo han cambiado.</dd>
+<dt>Ejemplo</dt><dd>Se han encontrado fósiles de caballos que muestran cómo sus patas pasaron de tener varios dedos a tener solo uno (el casco).</dd>
+</dl>
+</div>
+</div>
+
+<div class="id-card">
+<div class="id-icon">🦴</div>
+<div>
+<dl>
+<dt>2. Anatomía comparada (homologías)</dt><dd>Diferentes animales tienen huesos muy parecidos aunque se vean distintos por fuera. El brazo humano, la aleta de una ballena y el ala de un murciélago tienen los mismos huesos.</dd>
+<dt>¿Qué significa?</dt><dd>Que comparten un ancestro común que tenía esos huesos.</dd>
+</dl>
+</div>
+</div>
+
+<div class="id-card">
+<div class="id-icon">🧬</div>
+<div>
+<dl>
+<dt>3. Comparación de ADN</dt><dd>Cuando se compara el ADN de diferentes especies, se encuentra que las más parecidas comparten más ADN.</dd>
+<dt>Ejemplo</dt><dd>Los humanos comparten cerca del 98% de su ADN con los chimpancés.</dd>
+</dl>
+</div>
+</div>
+
+<div class="id-card">
+<div class="id-icon">🗺</div>
+<div>
+<dl>
+<dt>4. Distribución geográfica</dt><dd>Las especies que viven en islas cercanas se parecen más entre sí que las de islas lejanas. Esto es porque evolucionaron a partir de un ancestro común cercano.</dd>
+<dt>Ejemplo</dt><dd>Los pinzones de las Galápagos que observó Darwin.</dd>
+</dl>
+</div>
+</div>
+
+<div class="id-card">
+<div class="id-icon">🔬</div>
+<div>
+<dl>
+<dt>5. Órganos vestigiales</dt><dd>Partes del cuerpo que ya no tienen función útil pero que tenían sentido en un ancestro antiguo.</dd>
+<dt>Ejemplo</dt><dd>El apéndice humano, la muela del juicio, o los huesos de patas en las serpientes.</dd>
+</dl>
+</div>
+</div>
+
+<div class="box box-green">
+<div class="box-label">En resumen</div>
+<p>Las pruebas de la evolución incluyen: fósiles, anatomía comparada, comparación de ADN, distribución geográfica y órganos vestigiales. Todas apuntan a que los seres vivos cambian con el tiempo y comparten ancestros comunes.</p>
+</div>
+</div>
+
+<div class="check-studied"><input type="checkbox" id="chk10" onchange="markStudied('sec10')"><label for="chk10">Doy por estudiado: Pruebas de la evolución</label></div>
+<div class="nav-bottom">
+<button onclick="goToSection('sec9')">Anterior: Teoría sintética</button>
+<button onclick="goToSection('sec11')">Siguiente: Eras geológicas</button>
+</div>
+</div>
+
+<!-- SEC 11: ERAS GEOLOGICAS -->
+<div class="section" id="sec11">
+<h1>Eras geológicas y evolución</h1>
+<button class="tts-section-btn" onclick="readSection('sec11')">Escuchar esta sección</button>
+
+<div class="orientation">
+<div class="ori-title">Tiempo estimado: 12 minutos | 4 eras principales</div>
+<p><strong>Qué vas a lograr:</strong> Identificar las principales eras geológicas y los seres vivos que aparecieron en cada una.</p>
+</div>
+
+<div class="readable">
+<p>La historia de la Tierra se divide en grandes períodos llamados <strong>eras geológicas</strong>. En cada era, diferentes seres vivos aparecieron y desaparecieron.</p>
+
+<div class="id-card">
+<div class="id-icon">🌊</div>
+<div><dl>
+<dt>Era Precámbrica (hace 4.600 - 541 millones de años)</dt>
+<dd>La más larga. Aparecieron las primeras células, bacterias y organismos muy simples en el mar.</dd>
+</dl></div>
+</div>
+
+<div class="id-card">
+<div class="id-icon">🐚</div>
+<div><dl>
+<dt>Era Paleozoica (541 - 252 millones de años)</dt>
+<dd>Aparecieron los peces, los primeros animales en tierra (anfibios), los insectos y los reptiles. También las primeras plantas terrestres.</dd>
+</dl></div>
+</div>
+
+<div class="id-card">
+<div class="id-icon">🦕</div>
+<div><dl>
+<dt>Era Mesozoica (252 - 66 millones de años)</dt>
+<dd>La era de los dinosaurios. También aparecieron los primeros mamíferos y las primeras aves. Terminó con una gran extinción.</dd>
+</dl></div>
+</div>
+
+<div class="id-card">
+<div class="id-icon">🐘</div>
+<div><dl>
+<dt>Era Cenozoica (66 millones de años - presente)</dt>
+<dd>Después de la extinción de los dinosaurios, los mamíferos se diversificaron mucho. Aparecieron los primates y, hace unos 200.000 años, los humanos modernos.</dd>
+</dl></div>
+</div>
+
+<div class="box box-green">
+<div class="box-label">En resumen</div>
+<p>La vida en la Tierra ha pasado por cuatro grandes eras. En cada una aparecieron nuevos tipos de seres vivos, mientras otros se extinguieron. Los humanos somos recién llegados en esta larga historia.</p>
+</div>
+</div>
+
+<div class="check-studied"><input type="checkbox" id="chk11" onchange="markStudied('sec11')"><label for="chk11">Doy por estudiado: Eras geológicas</label></div>
+<div class="nav-bottom">
+<button onclick="goToSection('sec10')">Anterior: Pruebas de la evolución</button>
+<button onclick="goToSection('sec12')">Siguiente: Síntesis y glosario</button>
+</div>
+</div>
+
+<!-- SEC 12: SINTESIS Y GLOSARIO -->
+<div class="section" id="sec12">
+<h1>Síntesis y glosario</h1>
+<button class="tts-section-btn" onclick="readSection('sec12')">Escuchar esta sección</button>
+
+<div class="readable">
+<h2>Diez ideas para recordar</h2>
+<div class="box box-blue">
+<div class="box-label">Ideas fundamentales</div>
+<p><strong>1.</strong> La generación espontánea (vida de la nada) fue refutada por Redi y Pasteur.</p>
+<p><strong>2.</strong> La biogénesis dice que toda vida viene de otra vida.</p>
+<p><strong>3.</strong> Oparin y Haldane propusieron que las moléculas de la vida se formaron por reacciones químicas en la Tierra primitiva.</p>
+<p><strong>4.</strong> Miller y Urey crearon aminoácidos en laboratorio simulando la Tierra primitiva.</p>
+<p><strong>5.</strong> Cuvier propuso el catastrofismo pero no pudo explicar de dónde venían las nuevas especies.</p>
+<p><strong>6.</strong> Lamarck dijo que los seres vivos cambian, pero su explicación de herencia de caracteres adquiridos fue rechazada.</p>
+<p><strong>7.</strong> Darwin descubrió la selección natural: los más adaptados sobreviven y se reproducen más.</p>
+<p><strong>8.</strong> La teoría sintética une a Darwin con la genética (mutaciones + selección natural).</p>
+<p><strong>9.</strong> Las pruebas de la evolución incluyen fósiles, anatomía comparada, ADN, distribución geográfica y órganos vestigiales.</p>
+<p><strong>10.</strong> La vida ha pasado por cuatro grandes eras geológicas, desde las primeras bacterias hasta los humanos.</p>
+</div>
+
+<h2>Glosario</h2>
+<div class="card">
+<p><strong>Aminoácido:</strong> Molécula pequeña que forma las proteínas. Es como un ladrillo que construye una pared.</p>
+<p><strong>Ancestro común:</strong> Un ser vivo del pasado del que descienden varias especies actuales.</p>
+<p><strong>Biogénesis:</strong> Principio que dice que todo ser vivo viene de otro ser vivo.</p>
+<p><strong>Catastrofismo:</strong> Idea de Cuvier: grandes catástrofes destruían a las especies y aparecían otras nuevas.</p>
+<p><strong>Evolución:</strong> Cambio gradual de los seres vivos a lo largo de muchas generaciones.</p>
+<p><strong>Fósil:</strong> Resto o huella de un ser vivo que vivió hace mucho tiempo, conservado en roca.</p>
+<p><strong>Generación espontánea:</strong> Idea antigua y falsa de que la vida podía nacer sola de la materia sin vida.</p>
+<p><strong>Homología:</strong> Semejanza entre estructuras de diferentes especies porque comparten un ancestro.</p>
+<p><strong>Mutación:</strong> Cambio en el ADN que puede crear nuevas características.</p>
+<p><strong>Órgano vestigial:</strong> Parte del cuerpo que ya no tiene función útil pero la tenía en un ancestro.</p>
+<p><strong>Selección natural:</strong> Proceso por el cual los más adaptados al ambiente sobreviven y se reproducen más.</p>
+<p><strong>Teoría sintética:</strong> Teoría moderna que une la selección natural de Darwin con la genética.</p>
+</div>
+</div>
+
+<div class="check-studied"><input type="checkbox" id="chk12" onchange="markStudied('sec12')"><label for="chk12">Doy por estudiado: Síntesis y glosario</label></div>
+<div class="nav-bottom">
+<button onclick="goToSection('sec11')">Anterior: Eras geológicas</button>
+<button onclick="goToSection('sec13')">Siguiente: Autoevaluación final</button>
+</div>
+</div>
+
+<!-- SEC 13: AUTOEVALUACION FINAL -->
+<div class="section" id="sec13">
+<h1>Autoevaluación final</h1>
+
+<div class="readable">
+<h2>Parte 1: Selección múltiple</h2>
+
+<div class="quiz-q" data-correct="b">
+<p>1. ¿Quién refutó la generación espontánea con su experimento de frascos con cuello de cisne?</p>
+<label><input type="radio" name="qf1" value="a"> Darwin</label>
+<label><input type="radio" name="qf1" value="b"> Pasteur</label>
+<label><input type="radio" name="qf1" value="c"> Lamarck</label>
+<label><input type="radio" name="qf1" value="d"> Oparin</label>
+<div class="feedback"></div>
+</div>
+
+<div class="quiz-q" data-correct="c">
+<p>2. ¿Qué obtuvieron Miller y Urey en su experimento?</p>
+<label><input type="radio" name="qf2" value="a"> Células completas</label>
+<label><input type="radio" name="qf2" value="b"> ADN</label>
+<label><input type="radio" name="qf2" value="c"> Aminoácidos</label>
+<label><input type="radio" name="qf2" value="d"> Virus</label>
+<div class="feedback"></div>
+</div>
+
+<div class="quiz-q" data-correct="a">
+<p>3. Según Darwin, ¿qué individuos tienen más probabilidad de sobrevivir?</p>
+<label><input type="radio" name="qf3" value="a"> Los mejor adaptados al ambiente</label>
+<label><input type="radio" name="qf3" value="b"> Los más grandes</label>
+<label><input type="radio" name="qf3" value="c"> Los que más se esfuerzan</label>
+<label><input type="radio" name="qf3" value="d"> Los que nacen primero</label>
+<div class="feedback"></div>
+</div>
+
+<div class="quiz-q" data-correct="d">
+<p>4. ¿Qué es la teoría sintética de la evolución?</p>
+<label><input type="radio" name="qf4" value="a"> La teoría de Lamarck mejorada</label>
+<label><input type="radio" name="qf4" value="b"> Solo la genética de Mendel</label>
+<label><input type="radio" name="qf4" value="c"> Solo la selección natural de Darwin</label>
+<label><input type="radio" name="qf4" value="d"> La unión de la selección natural de Darwin con la genética</label>
+<div class="feedback"></div>
+</div>
+
+<div class="quiz-q" data-correct="b">
+<p>5. ¿Qué son los fósiles?</p>
+<label><input type="radio" name="qf5" value="a"> Rocas decorativas</label>
+<label><input type="radio" name="qf5" value="b"> Restos conservados de seres vivos del pasado</label>
+<label><input type="radio" name="qf5" value="c"> Minerales que se encuentran en cuevas</label>
+<div class="feedback"></div>
+</div>
+
+<div class="quiz-q" data-correct="c">
+<p>6. ¿En qué era vivieron los dinosaurios?</p>
+<label><input type="radio" name="qf6" value="a"> Precámbrica</label>
+<label><input type="radio" name="qf6" value="b"> Paleozoica</label>
+<label><input type="radio" name="qf6" value="c"> Mesozoica</label>
+<label><input type="radio" name="qf6" value="d"> Cenozoica</label>
+<div class="feedback"></div>
+</div>
+
+<h2>Parte 2: Verdadero o Falso</h2>
+
+<div class="vf-item" data-correct="false">
+<p>7. Según Lamarck, si un papá va al gimnasio, sus hijos nacerán musculosos.</p>
+<button onclick="checkVF(this,'true')">Verdadero</button>
+<button onclick="checkVF(this,'false')">Falso</button>
+<div class="vf-fb"></div>
+</div>
+
+<div class="vf-item" data-correct="true">
+<p>8. La biogénesis dice que todo ser vivo viene de otro ser vivo.</p>
+<button onclick="checkVF(this,'true')">Verdadero</button>
+<button onclick="checkVF(this,'false')">Falso</button>
+<div class="vf-fb"></div>
+</div>
+
+<div class="vf-item" data-correct="false">
+<p>9. Darwin conocía el ADN y los genes cuando propuso la selección natural.</p>
+<button onclick="checkVF(this,'true')">Verdadero</button>
+<button onclick="checkVF(this,'false')">Falso</button>
+<div class="vf-fb"></div>
+</div>
+
+<div class="vf-item" data-correct="true">
+<p>10. Los humanos comparten casi el 98% de su ADN con los chimpancés.</p>
+<button onclick="checkVF(this,'true')">Verdadero</button>
+<button onclick="checkVF(this,'false')">Falso</button>
+<div class="vf-fb"></div>
+</div>
+
+<div class="vf-item" data-correct="false">
+<p>11. El catastrofismo explicaba bien de dónde venían las nuevas especies.</p>
+<button onclick="checkVF(this,'true')">Verdadero</button>
+<button onclick="checkVF(this,'false')">Falso</button>
+<div class="vf-fb"></div>
+</div>
+
+<h2>Parte 3: Actividades abiertas</h2>
+
+<div class="card">
+<p><strong>12.</strong> Dibuja o describe con tus palabras las diferencias entre la explicación de Lamarck y la de Darwin sobre por qué las jirafas tienen el cuello largo.</p>
+<textarea style="width:100%;min-height:100px;padding:10px;border:2px solid var(--c-border);border-radius:8px;font-family:inherit;font-size:1rem" placeholder="Escribe tu respuesta aquí..."></textarea>
+</div>
+
+<div class="card">
+<p><strong>13.</strong> Menciona tres pruebas de la evolución y explica brevemente cada una.</p>
+<textarea style="width:100%;min-height:100px;padding:10px;border:2px solid var(--c-border);border-radius:8px;font-family:inherit;font-size:1rem" placeholder="Escribe tu respuesta aquí..."></textarea>
+</div>
+
+<div class="card">
+<p><strong>14.</strong> ¿Por qué el experimento de Miller-Urey es importante para entender el origen de la vida?</p>
+<textarea style="width:100%;min-height:100px;padding:10px;border:2px solid var(--c-border);border-radius:8px;font-family:inherit;font-size:1rem" placeholder="Escribe tu respuesta aquí..."></textarea>
+</div>
+</div>
+
+<div class="check-studied"><input type="checkbox" id="chk13" onchange="markStudied('sec13')"><label for="chk13">Doy por terminada la autoevaluación</label></div>
+<div class="nav-bottom">
+<button onclick="goToSection('sec12')">Anterior: Síntesis y glosario</button>
+<button disabled>Fin de la guía</button>
+</div>
+</div>
+
+</main>
+
+<script>
+/* ===== NAVIGATION ===== */
+const sections=document.querySelectorAll('.section');
+const navLinks=document.querySelectorAll('.sidebar-nav a');
+const visited=new Set(['sec0']);
+let currentSection='sec0';
+
+function goToSection(id){
+  sections.forEach(s=>s.classList.remove('active'));
+  navLinks.forEach(a=>{a.classList.remove('active');if(a.dataset.section===id)a.classList.add('active')});
+  const el=document.getElementById(id);
+  if(el){el.classList.add('active');currentSection=id;visited.add(id);updateProgress();window.scrollTo(0,0)}
+}
+navLinks.forEach(a=>a.addEventListener('click',e=>{e.preventDefault();goToSection(a.dataset.section);if(window.innerWidth<900)document.getElementById('sidebar').classList.remove('open')}));
+
+function markStudied(id){visited.add(id);updateProgress()}
+function updateProgress(){
+  const total=sections.length;
+  const done=visited.size;
+  document.getElementById('progressFill').style.width=((done/total)*100)+'%';
+  document.getElementById('progressLabel').textContent=done+' de '+total+' secciones';
+  navLinks.forEach(a=>{if(visited.has(a.dataset.section))a.classList.add('visited')});
+}
+
+/* ===== HAMBURGER ===== */
+document.getElementById('hamburgerBtn').addEventListener('click',()=>document.getElementById('sidebar').classList.toggle('open'));
+
+/* ===== SETTINGS ===== */
+document.getElementById('settingsBtn').addEventListener('click',()=>document.getElementById('settingsOverlay').classList.add('show'));
+document.getElementById('settingsClose').addEventListener('click',()=>document.getElementById('settingsOverlay').classList.remove('show'));
+document.getElementById('settingsOverlay').addEventListener('click',e=>{if(e.target===e.currentTarget)e.currentTarget.classList.remove('show')});
+
+document.querySelectorAll('.btn-row[data-setting] button').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    const row=btn.closest('.btn-row');
+    const setting=row.dataset.setting;
+    row.querySelectorAll('button').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    const val=btn.dataset.val;
+    if(setting==='fontsize')document.documentElement.style.setProperty('--fs-base',val);
+    else if(setting==='lineheight')document.documentElement.style.setProperty('--lh-base',val);
+    else if(setting==='fontfamily')document.documentElement.style.setProperty('--font-current',val);
+    else if(setting==='theme'){document.documentElement.removeAttribute('data-theme');if(val!=='light')document.documentElement.setAttribute('data-theme',val);document.querySelector('.sidebar').style.transition='none';setTimeout(()=>document.querySelector('.sidebar').style.transition='',50)}
+    else if(setting==='maxwidth')document.documentElement.style.setProperty('--max-width',val);
+  });
+});
+
+/* Tools toggles */
+document.getElementById('toggleRuler').addEventListener('click',()=>document.body.classList.toggle('ruler-on'));
+document.getElementById('toggleFocus').addEventListener('click',()=>document.body.classList.toggle('focus-mode'));
+document.getElementById('toggleMotion').addEventListener('click',()=>document.body.classList.toggle('reduce-motion'));
+document.getElementById('toggleTimer').addEventListener('click',()=>document.getElementById('timerWidget').classList.toggle('show'));
+
+/* Reading ruler */
+document.addEventListener('mousemove',e=>{const r=document.getElementById('ruler');if(r)r.style.top=(e.clientY-20)+'px'});
+
+/* ===== TIMER ===== */
+let timerInterval=null;
+function startTimer(min){stopTimer();let sec=min*60;const d=document.getElementById('timerDisplay');timerInterval=setInterval(()=>{if(sec<=0){stopTimer();try{new Audio('data:audio/wav;base64,UklGRnoGAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQoGAACBhYqFbF1fdH+Jj4+LgXRpYWBnc3+LkZGMgHNlWlhcZ3V/ipCQi4FzZVpYXGd1f4qQkA==').play()}catch(e){}return}sec--;const m=Math.floor(sec/60);const s=sec%60;d.textContent=String(m).padStart(2,'0')+':'+String(s).padStart(2,'0')},1000)}
+function stopTimer(){if(timerInterval)clearInterval(timerInterval);timerInterval=null;document.getElementById('timerDisplay').textContent='00:00'}
+
+/* ===== QUIZ ===== */
+document.querySelectorAll('.quiz-q input[type=radio]').forEach(inp=>{
+  inp.addEventListener('change',()=>{
+    const q=inp.closest('.quiz-q');
+    const correct=q.dataset.correct;
+    const fb=q.querySelector('.feedback');
+    fb.className='feedback';
+    if(inp.value===correct){fb.classList.add('correct');fb.textContent='Correcto. Muy bien.'}
+    else{fb.classList.add('wrong');fb.textContent='Incorrecto. La respuesta correcta es la opción '+correct.toUpperCase()+'. Revisa el tema.'}
+  });
+});
+
+function checkVF(btn,answer){
+  const item=btn.closest('.vf-item');
+  const correct=item.dataset.correct;
+  const fb=item.querySelector('.vf-fb');
+  fb.style.display='block';
+  if(answer===correct){fb.style.background='var(--c-green-bg)';fb.style.color='var(--c-green)';fb.textContent='Correcto.'}
+  else{fb.style.background='var(--c-red-bg)';fb.style.color='var(--c-red)';fb.textContent='Incorrecto. La respuesta es '+(correct==='true'?'Verdadero':'Falso')+'.'}
+}
+
+/* ===== TTS ===== */
+function cleanTextForTTS(text){return text.replace(/[\u{1F000}-\u{1FFFF}|\u{2600}-\u{27BF}|\u{FE00}-\u{FE0F}|\u{1F900}-\u{1F9FF}|\u{200D}|\u{20E3}|\u{E0020}-\u{E007F}|→|←|↑|↓|•|·|★|☆|✓|✗|⚙|☰|⚔|✅|📋|🌍|🔬|🧪|🧫|🌊|🦕|🦒|🐢|🧬|🦴|🗺|📚|✏|📜|🌋|🐚|🐘|🪰]/gu,'').replace(/Escuchar esta sección/g,'').replace(/Anterior:.*$/gm,'').replace(/Siguiente:.*$/gm,'').replace(/Doy por estudiado.*/g,'').replace(/\s+/g,' ').trim()}
+
+let ttsUtterances=[];let ttsIndex=0;let ttsPaused=false;
+function readSection(id){
+  if(!window.speechSynthesis)return alert('Tu navegador no soporta lectura en voz alta.');
+  window.speechSynthesis.cancel();ttsUtterances=[];ttsIndex=0;ttsPaused=false;
+  const sec=document.getElementById(id);
+  const blocks=sec.querySelectorAll('.readable h2,.readable h3,.readable p,.readable .step,.readable dt,.readable dd,.box-label,.box p,.id-card dt,.id-card dd');
+  blocks.forEach(b=>{const t=cleanTextForTTS(b.textContent);if(t.length>2)ttsUtterances.push({text:t,el:b})});
+  if(ttsUtterances.length===0)return;
+  document.getElementById('ttsBar').classList.add('show');
+  speakNext();
+}
+function speakNext(){
+  if(ttsIndex>=ttsUtterances.length){document.getElementById('ttsInfo').textContent='Lectura completada';return}
+  const item=ttsUtterances[ttsIndex];
+  const u=new SpeechSynthesisUtterance(item.text);
+  u.rate=parseFloat(document.getElementById('ttsRate').value);
+  u.lang='es';
+  const voiceSel=document.getElementById('ttsVoice');
+  if(voiceSel.value){const voices=speechSynthesis.getVoices();const v=voices.find(x=>x.name===voiceSel.value);if(v)u.voice=v}
+  u.onstart=()=>{document.getElementById('ttsInfo').textContent='Párrafo '+(ttsIndex+1)+' de '+ttsUtterances.length;item.el.style.outline='3px solid var(--c-primary)';item.el.scrollIntoView({behavior:'smooth',block:'center'})};
+  u.onend=()=>{item.el.style.outline='';ttsIndex++;speakNext()};
+  speechSynthesis.speak(u);
+}
+document.getElementById('ttsPause').addEventListener('click',()=>{if(ttsPaused){speechSynthesis.resume();ttsPaused=false;document.getElementById('ttsPause').textContent='Pausar'}else{speechSynthesis.pause();ttsPaused=true;document.getElementById('ttsPause').textContent='Continuar'}});
+document.getElementById('ttsStop').addEventListener('click',()=>{speechSynthesis.cancel();document.getElementById('ttsBar').classList.remove('show');ttsUtterances.forEach(i=>i.el.style.outline='')});
+
+/* Populate voices */
+function loadVoices(){const voices=speechSynthesis.getVoices();const sel=document.getElementById('ttsVoice');sel.innerHTML='';const esVoices=voices.filter(v=>v.lang.startsWith('es'));if(esVoices.length===0){sel.innerHTML='<option>Sin voces en español</option>';return}esVoices.forEach(v=>{const o=document.createElement('option');o.value=v.name;o.textContent=v.name+(v.localService?' (local)':'');sel.appendChild(o)})}
+speechSynthesis.onvoiceschanged=loadVoices;loadVoices();
+
+/* ===== PRINT ===== */
+function doPrint(){
+  if(!document.getElementById('printFigures').checked)document.body.classList.add('print-no-figures');
+  if(!document.getElementById('printActivities').checked)document.body.classList.add('print-no-activities');
+  window.print();
+  document.body.classList.remove('print-no-figures','print-no-activities');
+}
+
+/* ===== INIT ===== */
+updateProgress();
+</script>
+</body>
+</html>
